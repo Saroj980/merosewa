@@ -4,13 +4,13 @@ import { Search, Home, Grid, User, Bell, Wallet, Clock, Star, ClipboardList } fr
 
 export function AppPromo() {
   return (
-    <section className="py-20 bg-white border-b border-slate-100">
+    <section className="py-10 md:py-20 bg-white border-b border-slate-100">
       <div className="container mx-auto px-4 max-w-[1000px]">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           
           <div className="md:w-1/2 flex justify-center md:justify-start relative">
              {/* Mockup of two phones from the wireframe */}
-             <div className="relative w-[300px] h-[400px]">
+             <div className="relative w-[300px] h-[400px] scale-[0.85] sm:scale-100 origin-center">
                 {/* Mero Sewa User App */}
                 <motion.div 
                   animate={{ y: [0, -10, 0] }}
@@ -138,20 +138,20 @@ export function AppPromo() {
               Book services on the go with our mobile app. <br/> Easy, fast and reliable.
             </p>
             
-            <div className="flex flex-row justify-center md:justify-start gap-4 pt-4">
-              <button className="bg-black text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-slate-800 transition-colors">
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.61 3 21.09 3 20.5ZM14.81 10.88L17.26 9.46C18.25 8.89 18.25 7.97 17.26 7.4L4.84 0.229996C4.46 0.00999641 4.04 -0.0400036 3.66 0.0499964L14.81 10.88ZM15.93 12L4.04 23.89C4.38 23.95 4.75 23.89 5.08 23.7L17.26 16.6C18.25 16.03 18.25 15.11 17.26 14.54L15.93 12Z"/></svg>
+            <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3 sm:gap-4 pt-4">
+              <button className="w-full sm:w-auto bg-black text-white px-6 py-3 sm:px-4 sm:py-2 rounded-xl sm:rounded-lg flex justify-center items-center gap-3 hover:bg-slate-800 transition-colors shadow-lg">
+                <svg className="w-7 h-7 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.61 3 21.09 3 20.5ZM14.81 10.88L17.26 9.46C18.25 8.89 18.25 7.97 17.26 7.4L4.84 0.229996C4.46 0.00999641 4.04 -0.0400036 3.66 0.0499964L14.81 10.88ZM15.93 12L4.04 23.89C4.38 23.95 4.75 23.89 5.08 23.7L17.26 16.6C18.25 16.03 18.25 15.11 17.26 14.54L15.93 12Z"/></svg>
                 <div className="text-left">
-                  <div className="text-[10px] leading-tight">GET IT ON</div>
-                  <div className="text-sm font-bold leading-tight">Google Play</div>
+                  <div className="text-[11px] sm:text-[10px] text-slate-300 leading-tight">GET IT ON</div>
+                  <div className="text-base sm:text-sm font-bold leading-tight">Google Play</div>
                 </div>
               </button>
               
-              <button className="bg-black text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-slate-800 transition-colors">
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M16.36 14.08C16.38 10.71 19.12 9.09 19.25 9.01C17.58 6.57 14.93 6.18 14.04 6.07C11.93 5.86 9.87 7.32 8.79 7.32C7.71 7.32 6.03 6.09 4.3 6.12C2.07 6.15 0.06 7.42 -1.08 9.38C-3.4 13.41 -1.48 19.34 0.77 22.58C1.86 24.16 3.12 25.93 4.8 25.87C6.42 25.81 7.05 24.83 8.98 24.83C10.91 24.83 11.48 25.87 13.16 25.84C14.88 25.81 15.98 24.23 17.06 22.64C18.33 20.78 18.85 18.96 18.88 18.86C18.82 18.84 16.34 17.9 16.36 14.08ZM12.01 4.02C12.91 2.94 13.51 1.48 13.34 0C12.06 0.05 10.5 0.85 9.58 1.91C8.75 2.85 8.03 4.35 8.23 5.8C9.65 5.91 11.11 5.11 12.01 4.02Z" transform="translate(2 0)"/></svg>
+              <button className="w-full sm:w-auto bg-black text-white px-6 py-3 sm:px-4 sm:py-2 rounded-xl sm:rounded-lg flex justify-center items-center gap-3 hover:bg-slate-800 transition-colors shadow-lg">
+                <svg className="w-7 h-7 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M16.36 14.08C16.38 10.71 19.12 9.09 19.25 9.01C17.58 6.57 14.93 6.18 14.04 6.07C11.93 5.86 9.87 7.32 8.79 7.32C7.71 7.32 6.03 6.09 4.3 6.12C2.07 6.15 0.06 7.42 -1.08 9.38C-3.4 13.41 -1.48 19.34 0.77 22.58C1.86 24.16 3.12 25.93 4.8 25.87C6.42 25.81 7.05 24.83 8.98 24.83C10.91 24.83 11.48 25.87 13.16 25.84C14.88 25.81 15.98 24.23 17.06 22.64C18.33 20.78 18.85 18.96 18.88 18.86C18.82 18.84 16.34 17.9 16.36 14.08ZM12.01 4.02C12.91 2.94 13.51 1.48 13.34 0C12.06 0.05 10.5 0.85 9.58 1.91C8.75 2.85 8.03 4.35 8.23 5.8C9.65 5.91 11.11 5.11 12.01 4.02Z" transform="translate(2 0)"/></svg>
                 <div className="text-left">
-                  <div className="text-[10px] leading-tight">Download on the</div>
-                  <div className="text-sm font-bold leading-tight">App Store</div>
+                  <div className="text-[11px] sm:text-[10px] text-slate-300 leading-tight">Download on the</div>
+                  <div className="text-base sm:text-sm font-bold leading-tight">App Store</div>
                 </div>
               </button>
             </div>

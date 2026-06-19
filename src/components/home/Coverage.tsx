@@ -40,7 +40,7 @@ export function Coverage() {
   ];
 
   return (
-    <section className="py-20 bg-[#f8fafd] overflow-hidden">
+    <section className="py-10 md:py-20 bg-[#f8fafd] overflow-hidden">
       <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           

@@ -42,14 +42,21 @@ const locations = [
 function MapController() {
   const map = useMap();
   useEffect(() => {
-    // Initial zoom out, then fly to Dhangadhi
-    map.setView([28.4, 80.6], 8);
-    setTimeout(() => {
-      map.flyTo([28.8, 80.6], 9, {
-        duration: 2.5,
-        easeLinearity: 0.25
-      });
-    }, 500);
+    if (!map) return;
+    
+    const timer = setTimeout(() => {
+      try {
+        map.invalidateSize();
+        map.flyTo([28.8, 80.6], 9, {
+          duration: 2.5,
+          easeLinearity: 0.25
+        });
+      } catch(e) {
+        console.error(e);
+      }
+    }, 800);
+    
+    return () => clearTimeout(timer);
   }, [map]);
   return null;
 }
@@ -72,8 +79,8 @@ export default function SudurpashchimMap() {
 
       {/* Map Container */}
       <MapContainer 
-        center={[28.8, 80.6]} 
-        zoom={9} 
+        center={[28.4, 80.6]} 
+        zoom={8} 
         scrollWheelZoom={false}
         zoomControl={false} // Hide default to keep it clean
         attributionControl={false} // Remove Leaflet watermark

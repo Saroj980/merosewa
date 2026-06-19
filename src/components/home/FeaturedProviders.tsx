@@ -9,7 +9,7 @@ export function FeaturedProviders() {
   ];
 
   return (
-    <section className="py-20 bg-[#f8fafd]">
+    <section className="py-10 md:py-20 bg-[#f8fafd]">
       <div className="container mx-auto px-4 max-w-[1200px]">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
@@ -22,9 +22,9 @@ export function FeaturedProviders() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex overflow-x-auto pb-6 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {providers.map((item, idx) => (
-            <div key={idx} className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+            <div key={idx} className="w-[85vw] max-w-[300px] sm:w-auto sm:max-w-none shrink-0 snap-center bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-4 border-white shadow-md mb-4 relative">
                 <img src={item.avatar} alt={item.name} className="w-full h-full object-cover" />
                 <div className="absolute bottom-0 right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>

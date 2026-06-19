@@ -62,7 +62,7 @@ export function HowItWorks() {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden bg-slate-50/50">
+    <section className="py-10 md:py-20 relative overflow-hidden bg-slate-50/50">
       <div className="container mx-auto px-4 max-w-[1200px] relative z-10">
         
         {/* Header */}
@@ -80,7 +80,14 @@ export function HowItWorks() {
 
         {/* Stepper Navigation */}
         <div className="max-w-4xl mx-auto mb-16 relative">
-          <div className="hidden md:block absolute top-6 left-[12%] right-[12%] border-t-2 border-dashed border-slate-200 z-0"></div>
+          {/* Background Track Line */}
+          <div className="absolute top-4 sm:top-6 left-[12.5%] right-[12.5%] h-[2px] bg-slate-200 z-0"></div>
+          
+          {/* Active Progress Line */}
+          <div 
+            className="absolute top-4 sm:top-6 left-[12.5%] h-[2px] bg-[var(--primary-blue)] z-0 transition-all duration-500 ease-in-out"
+            style={{ width: `${(activeStep / (steps.length - 1)) * 75}%` }}
+          ></div>
           
           <div className="flex justify-between relative z-10">
             {steps.map((step, idx) => {
@@ -91,16 +98,16 @@ export function HowItWorks() {
                 <button 
                   key={step.id}
                   onClick={() => setActiveStep(idx)}
-                  className="flex flex-col items-center group relative w-1/4"
+                  className="flex flex-col items-center group relative w-1/4 px-1"
                 >
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-300 shadow-sm z-10
+                  <div className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-sm sm:text-lg font-bold transition-all duration-300 shadow-sm z-10
                     ${isActive ? 'bg-[var(--primary-blue)] text-white scale-110 shadow-blue-200' : 
                       isPast ? 'bg-white border-2 border-[var(--primary-blue)] text-[var(--primary-blue)]' : 
                       'bg-white border-2 border-slate-200 text-slate-400 group-hover:border-slate-300'}`}
                   >
                     {step.id}
                   </div>
-                  <span className={`mt-4 text-sm font-semibold transition-colors duration-300 text-center
+                  <span className={`mt-2 sm:mt-4 text-[10px] sm:text-sm font-semibold transition-colors duration-300 text-center leading-tight
                     ${isActive ? 'text-[var(--primary-blue)]' : 'text-slate-500'}`}
                   >
                     {step.title}
@@ -122,7 +129,7 @@ export function HowItWorks() {
           <div className="flex flex-col lg:flex-row items-center gap-12 relative">
             
             {/* Image Section */}
-            <div className="w-full lg:w-1/2 relative min-h-[350px] sm:min-h-[400px] lg:min-h-[450px] flex items-center justify-center bg-slate-50/50 rounded-2xl">
+            <div className="w-full lg:w-1/2 relative min-h-[250px] sm:min-h-[400px] lg:min-h-[450px] flex items-center justify-center bg-slate-50/50 rounded-2xl">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep}
@@ -174,7 +181,7 @@ export function HowItWorks() {
                     ))}
                   </ul>
                   
-                  <button className="bg-[var(--primary-blue)] hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all flex items-center group">
+                  <button className="w-full sm:w-auto justify-center bg-[var(--primary-blue)] hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all flex items-center group">
                     {steps[activeStep].cta}
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </button>

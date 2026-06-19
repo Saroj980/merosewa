@@ -30,11 +30,11 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
-              <Button size="lg" className="bg-[var(--primary-blue)] hover:bg-blue-700 text-white h-12 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-blue-500/30">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-2">
+              <Button size="lg" className="w-full sm:w-auto bg-[var(--primary-blue)] hover:bg-blue-700 text-white h-12 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-blue-500/30">
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" /> Book a Service
               </Button>
-              <Button size="lg" variant="outline" className="h-12 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-sm sm:text-base border-slate-200 text-slate-800 hover:bg-slate-50 bg-white shadow-sm">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-sm sm:text-base border-slate-200 text-slate-800 hover:bg-slate-50 bg-white shadow-sm">
                 <UserCheck className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[var(--primary-green)]" /> Enroll as an Expert
               </Button>
             </div>
@@ -74,32 +74,32 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative hidden lg:block h-[600px] xl:h-[700px] w-full"
+            className="relative h-[380px] sm:h-[500px] lg:h-[600px] xl:h-[700px] w-full mt-8 lg:mt-0"
           >
             {/* The Generated Image Blending In */}
             <div className="absolute inset-0 z-0 flex justify-end items-end">
                <img 
                  src="/hero_professionals.png" 
                  alt="Mero Sewa Professionals" 
-                 className="w-[140%] max-w-none h-[105%] object-cover object-bottom"
+                 className="w-[120%] sm:w-[140%] max-w-none h-[100%] sm:h-[105%] object-cover object-bottom"
                  style={{ maskImage: "linear-gradient(to bottom, black 85%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 85%, transparent 100%)" }}
                />
             </div>
 
             {/* Trusted Badge floating above image bottom-left */}
-            <div className="absolute bottom-24 left-0 bg-white px-6 py-4 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-4 z-20 transition-transform hover:-translate-y-1 duration-300">
-               <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center border-2 border-[var(--primary-green)]">
-                 <ShieldCheck className="w-6 h-6 text-[var(--primary-green)]" />
+            <div className="absolute bottom-16 sm:bottom-24 left-0 sm:left-4 lg:left-0 bg-white/95 backdrop-blur-sm px-4 py-3 sm:px-6 sm:py-4 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-3 sm:gap-4 z-20 transition-transform hover:-translate-y-1 duration-300">
+               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-50 rounded-full flex items-center justify-center border-2 border-[var(--primary-green)] shrink-0">
+                 <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--primary-green)]" />
                </div>
                <div>
-                 <p className="text-sm text-slate-500 font-medium">Trusted by</p>
-                 <p className="text-2xl font-black text-[var(--primary-green)] leading-tight">10,000+</p>
-                 <p className="text-xs text-slate-500 font-bold">Happy Customers</p>
+                 <p className="text-xs sm:text-sm text-slate-500 font-medium">Trusted by</p>
+                 <p className="text-xl sm:text-2xl font-black text-[var(--primary-green)] leading-tight">10,000+</p>
+                 <p className="text-[10px] sm:text-xs text-slate-500 font-bold">Happy Customers</p>
                </div>
             </div>
 
             {/* App Mockup floating over image bottom-right */}
-            <div className="absolute bottom-6 right-0 lg:-right-6 xl:right-0 w-[210px] bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-[8px] border-[#1e293b] overflow-hidden z-30 transform hover:-translate-y-2 transition-transform duration-500 scale-[0.8] origin-bottom-right">
+            <div className="hidden sm:block absolute bottom-6 right-0 lg:-right-6 xl:right-0 w-[210px] bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-[8px] border-[#1e293b] overflow-hidden z-30 transform hover:-translate-y-2 transition-transform duration-500 scale-[0.7] md:scale-[0.8] origin-bottom-right">
                {/* Phone Notch */}
                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-4 bg-[#1e293b] rounded-b-lg z-50"></div>
                

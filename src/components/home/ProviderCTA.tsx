@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export function ProviderCTA() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-8 md:py-16 bg-white">
       <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="bg-[#0f6b49] rounded-2xl p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 shadow-xl">
           
