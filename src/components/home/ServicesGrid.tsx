@@ -31,7 +31,7 @@ export function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              whileHover={{ y: -4, shadow: "0px 10px 30px rgba(0,0,0,0.08)" }}
+              whileHover={{ y: -4, boxShadow: "0px 10px 30px rgba(0,0,0,0.08)" }}
               className="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col items-center text-center cursor-pointer transition-all hover:border-[var(--primary-blue)] group"
             >
               <service.icon className="w-10 h-10 text-[var(--primary-blue)] mb-4 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
