@@ -44,9 +44,9 @@ export default function Navbar() {
           <nav className="hidden xl:flex items-center gap-8">
             <Link href="/" className="text-[var(--primary-blue)] font-bold border-b-2 border-[var(--primary-blue)] pb-1">Home</Link>
             <div className="relative group cursor-pointer">
-              <span className="flex items-center gap-1 text-slate-700 font-semibold hover:text-[var(--primary-blue)] transition-colors pb-1">
+              <Link href="/services" className="flex items-center gap-1 text-slate-700 font-semibold hover:text-[var(--primary-blue)] transition-colors pb-1">
                 Services <ChevronDown className="w-4 h-4" />
-              </span>
+              </Link>
             </div>
             <Link href="/provider" className="text-slate-700 font-semibold hover:text-[var(--primary-blue)] transition-colors pb-1">Become Provider</Link>
             <Link href="/coverage" className="text-slate-700 font-semibold hover:text-[var(--primary-blue)] transition-colors pb-1">Coverage Areas</Link>
