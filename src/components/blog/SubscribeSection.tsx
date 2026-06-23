@@ -12,7 +12,13 @@ export default function SubscribeSection() {
       <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#22C55E]/20 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Floating Elements */}
-      {[...Array(5)].map((_, i) => (
+      {[
+        { left: '25%', top: '60%', duration: 6, delay: 0.5 },
+        { left: '45%', top: '80%', duration: 8, delay: 1.2 },
+        { left: '65%', top: '55%', duration: 5, delay: 0.2 },
+        { left: '80%', top: '75%', duration: 7, delay: 1.8 },
+        { left: '35%', top: '90%', duration: 9, delay: 0.8 },
+      ].map((particle, i) => (
         <motion.div
           key={i}
           className="absolute w-2 h-2 rounded-full bg-white/20"
@@ -21,14 +27,14 @@ export default function SubscribeSection() {
             opacity: [0, 1, 0],
           }}
           transition={{
-            duration: 5 + Math.random() * 5,
+            duration: particle.duration,
             repeat: Infinity,
-            delay: Math.random() * 2,
+            delay: particle.delay,
             ease: "easeInOut"
           }}
           style={{
-            left: `${20 + Math.random() * 60}%`,
-            top: `${50 + Math.random() * 50}%`,
+            left: particle.left,
+            top: particle.top,
           }}
         />
       ))}
@@ -41,8 +47,8 @@ export default function SubscribeSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Stay Updated With Home Maintenance Tips
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-snug md:leading-[1.3]">
+              Stay Updated With Home<br className="hidden sm:block" /> Maintenance Tips
             </h2>
             <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
               Join thousands of homeowners in Sudurpashchim. Get expert advice, seasonal checklists, and exclusive offers delivered straight to your inbox.

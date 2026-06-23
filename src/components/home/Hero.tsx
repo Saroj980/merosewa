@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Calendar, UserCheck, ShieldCheck, Clock, ThumbsUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -20,6 +21,19 @@ export function Hero() {
             className="space-y-8 relative z-20"
           >
             <div className="space-y-4">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center gap-2 px-4 py-2 mb-2 rounded-full bg-orange-50 border border-orange-200 text-orange-600 text-sm md:text-base font-bold tracking-wide shadow-sm"
+              >
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                </span>
+                🚀 LAUNCHING SOON IN SUDURPASHCHIM
+              </motion.div>
+
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-slate-800 leading-[1.2] tracking-normal mt-2">
                 नेपालको भरपर्दो <br />
                 <span className="text-[var(--primary-blue)] inline-block mt-2">होम सर्भिस प्लेटफर्म</span>
@@ -31,9 +45,9 @@ export function Hero() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-2">
-              <Button size="lg" className="w-full sm:w-auto bg-[var(--primary-blue)] hover:bg-blue-700 text-white h-12 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-blue-500/30">
+              <Link href="/book" className="w-full sm:w-auto bg-[var(--primary-blue)] hover:bg-blue-700 text-white h-12 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-blue-500/30 flex items-center justify-center">
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" /> Book a Service
-              </Button>
+              </Link>
               <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-sm sm:text-base border-slate-200 text-slate-800 hover:bg-slate-50 bg-white shadow-sm">
                 <UserCheck className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[var(--primary-green)]" /> Enroll as an Expert
               </Button>

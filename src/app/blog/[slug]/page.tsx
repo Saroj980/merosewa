@@ -4,11 +4,16 @@ import RelatedArticles from "@/components/blog/RelatedArticles";
 import SubscribeSection from "@/components/blog/SubscribeSection";
 import { Footer } from "@/components/home/Footer";
 import { Metadata } from "next";
+import { getBlogData } from "@/data/blogs";
 
-export const metadata: Metadata = {
-  title: "How Often Should You Service Your AC in Nepal? | Mero Sewa Blog",
-  description: "Learn the ideal servicing frequency for your air conditioner to maximize cooling efficiency during the hot Dhangadhi summers.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const data = getBlogData(resolvedParams.slug);
+  return {
+    title: `${data.title} | Mero Sewa Blog`,
+    description: data.paragraphs[0].substring(0, 150) + "...",
+  };
+}
 
 export function generateStaticParams() {
   return [
@@ -26,11 +31,14 @@ export function generateStaticParams() {
   ];
 }
 
-export default function BlogPostPage() {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const data = getBlogData(resolvedParams.slug);
+
   return (
     <main className="flex-1 bg-white min-h-screen">
-      <BlogDetailHero />
-      <BlogContent />
+      <BlogDetailHero data={data} />
+      <BlogContent data={data} />
       <RelatedArticles />
       <SubscribeSection />
       <Footer />

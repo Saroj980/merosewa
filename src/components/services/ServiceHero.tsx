@@ -4,9 +4,13 @@ import Link from "next/link";
 
 interface ServiceHeroProps {
   title?: string;
+  description?: string;
 }
 
-export function ServiceHero({ title = "Professional Service" }: ServiceHeroProps) {
+export function ServiceHero({ 
+  title = "Professional Service",
+  description = "Trusted professionals, upfront pricing, and guaranteed satisfaction. Book your service in seconds with Nepal's best platform."
+}: ServiceHeroProps) {
   return (
     <section className="relative pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden bg-white dark:bg-slate-950">
       {/* Background styling for a premium light feel */}
@@ -43,7 +47,7 @@ export function ServiceHero({ title = "Professional Service" }: ServiceHeroProps
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl font-light leading-relaxed">
-              Trusted professionals, upfront pricing, and guaranteed satisfaction. Book your service in seconds with Nepal's best platform.
+              {description}
             </p>
 
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-4 pb-6">
@@ -120,9 +124,9 @@ export function ServiceHero({ title = "Professional Service" }: ServiceHeroProps
                   </li>
                 </ul>
 
-                <Button className="w-full h-14 text-lg font-bold bg-[var(--primary-blue)] hover:bg-blue-700 text-white rounded-xl shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-0.5 active:translate-y-0">
+                <Link href="/book" className="w-full h-14 flex items-center justify-center text-lg font-bold bg-[var(--primary-blue)] hover:bg-blue-700 text-white rounded-xl shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-0.5 active:translate-y-0">
                   Book Service Now
-                </Button>
+                </Link>
                 
                 <p className="text-center text-xs font-medium text-slate-500 dark:text-slate-400 mt-4">
                   Free cancellation up to 4 hours before service

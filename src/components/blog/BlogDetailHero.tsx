@@ -8,7 +8,7 @@ import { ArrowLeft, Clock, Calendar, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
-export default function BlogDetailHero() {
+export default function BlogDetailHero({ data }: { data: any }) {
   const [scrolled, setScrolled] = useState(false);
   const imageContainerRef = useRef<HTMLDivElement>(null);
 
@@ -27,7 +27,7 @@ export default function BlogDetailHero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const title = "How Often Should You Service Your AC in Nepal?";
+  const title = data.title;
   const words = title.split(" ");
 
   const SocialIcon = ({ path }: { path: string }) => (
@@ -40,9 +40,9 @@ export default function BlogDetailHero() {
     <>
       {/* Sticky Header for Reading */}
       <motion.div 
-        initial={{ y: -100 }}
-        animate={{ y: scrolled ? 0 : -100 }}
-        className="fixed top-[72px] lg:top-[80px] left-0 w-full bg-white/80 backdrop-blur-xl border-b border-slate-200 z-50 hidden md:block shadow-sm transition-all duration-300"
+        initial={{ y: "-100%" }}
+        animate={{ y: scrolled ? 0 : "-100%" }}
+        className="fixed top-[88px] left-0 w-full bg-white/95 backdrop-blur-xl border-b border-slate-200 z-40 hidden md:block shadow-sm transition-all duration-300"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4 max-w-2xl">
@@ -55,11 +55,11 @@ export default function BlogDetailHero() {
           </div>
           <div className="flex items-center gap-6">
             <span className="text-sm font-semibold text-slate-500 flex items-center gap-2">
-              <Clock className="w-4 h-4" /> 4 min read
+              <Clock className="w-4 h-4" /> {data.readTime}
             </span>
-            <button className="bg-[#0F172A] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#0057D9] transition-all shadow-md">
+            <Link href="/book" className="bg-[#0F172A] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#0057D9] transition-all shadow-md">
               Book Service
-            </button>
+            </Link>
           </div>
         </div>
       </motion.div>
@@ -92,15 +92,15 @@ export default function BlogDetailHero() {
               className="flex flex-wrap items-center justify-center gap-4 mb-8"
             >
               <span className="px-4 py-1 bg-blue-50 text-[#0057D9] text-sm font-bold tracking-widest uppercase rounded-full">
-                AC Services
+                {data.category}
               </span>
               <div className="flex items-center gap-4 text-slate-500 font-medium text-sm">
                 <span className="flex items-center gap-1.5">
-                  <Calendar className="w-4 h-4" /> Jun 12, 2026
+                  <Calendar className="w-4 h-4" /> {data.date}
                 </span>
                 <span className="w-1 h-1 rounded-full bg-slate-300" />
                 <span className="flex items-center gap-1.5">
-                  <Clock className="w-4 h-4" /> 4 min read
+                  <Clock className="w-4 h-4" /> {data.readTime}
                 </span>
               </div>
             </motion.div>
@@ -138,8 +138,8 @@ export default function BlogDetailHero() {
                 </div>
               </div>
               <div className="text-left">
-                <p className="font-bold text-[#0F172A] text-lg leading-tight">Bikash Thapa</p>
-                <p className="text-sm font-medium text-slate-500">Senior HVAC Specialist</p>
+                <p className="font-bold text-[#0F172A] text-lg leading-tight">{data.author}</p>
+                <p className="text-sm font-medium text-slate-500">{data.authorRole}</p>
               </div>
             </motion.div>
 
@@ -156,8 +156,8 @@ export default function BlogDetailHero() {
           >
             <motion.div style={{ y: imageY }} className="absolute inset-[-10%] w-[120%] h-[120%]">
               <Image 
-                src="https://images.unsplash.com/photo-1599305090598-fe179d501227?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-                alt="AC Maintenance Nepal" 
+                src={data.image} 
+                alt={data.title} 
                 fill
                 className="object-cover"
                 priority

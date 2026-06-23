@@ -9,11 +9,14 @@ import { MessageCircle, Phone } from "lucide-react";
 
 export function generateStaticParams() {
   return [
-    { slug: 'cleaning' },
+    { slug: 'electrician' },
     { slug: 'plumbing' },
-    { slug: 'electrical' },
     { slug: 'ac-repair' },
-    { slug: 'cctv' }
+    { slug: 'cctv' },
+    { slug: 'cleaning' },
+    { slug: 'carpenter' },
+    { slug: 'painter' },
+    { slug: 'computer-repair' }
   ];
 }
 
@@ -30,6 +33,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   // Fetch the data for the specific service slug
   // Fallback to a generic service if not found
   const serviceData = servicesData[slug] || {
+    description: "Trusted professionals, upfront pricing, and guaranteed satisfaction. Book your service in seconds with Nepal's best platform.",
     includes: ["Professional service execution", "Post-service cleanup", "Background verified expert"],
     excludes: ["Cost of spare parts", "Major civil work"],
     faqs: [
@@ -40,7 +44,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   return (
     <main className="flex-1 bg-[var(--background)]">
-      <ServiceHero title={title} />
+      <ServiceHero title={title} description={serviceData.description} />
       <ServiceFeatures includes={serviceData.includes} excludes={serviceData.excludes} />
       <Testimonials />
       <ServiceFAQ faqs={serviceData.faqs} />

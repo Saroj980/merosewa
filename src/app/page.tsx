@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone } from "lucide-react";
 import { Hero } from "@/components/home/Hero";
+import { LaunchPopup } from "@/components/home/LaunchPopup";
 import { TrustMetrics } from "@/components/home/TrustMetrics";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 
@@ -15,7 +16,8 @@ import { Footer } from "@/components/home/Footer";
 
 export default function Home() {
   return (
-    <main className="flex-1 bg-[var(--background)]">
+    <main className="flex-1 bg-[var(--background)] relative">
+      <LaunchPopup />
       <Hero />
       <TrustMetrics />
       <ServicesGrid />

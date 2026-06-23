@@ -1,9 +1,11 @@
 export const servicesData: Record<string, {
+  description: string;
   includes: string[];
   excludes: string[];
   faqs: { question: string; answer: string; }[];
 }> = {
   "electrician": {
+    description: "Professional electrical services for your home and office. From quick repairs to complete wiring, our certified electricians handle it all safely and efficiently.",
     includes: [
       "Wiring and rewiring of rooms",
       "Switchboard installation and repair",
@@ -24,6 +26,7 @@ export const servicesData: Record<string, {
     ]
   },
   "plumbing": {
+    description: "Expert plumbing services to fix leaks, clear blocks, and install new fixtures. Fast, reliable, and mess-free plumbing solutions at your doorstep.",
     includes: [
       "Leak detection and fixing",
       "Tap and washbasin installation",
@@ -44,6 +47,7 @@ export const servicesData: Record<string, {
     ]
   },
   "ac-repair": {
+    description: "Keep your space cool with our comprehensive AC repair and servicing. Expert technicians for deep cleaning, gas refilling, and quick repairs for all major brands.",
     includes: [
       "Deep cleaning of indoor and outdoor units",
       "Gas leak detection and refilling",
@@ -64,6 +68,7 @@ export const servicesData: Record<string, {
     ]
   },
   "cctv": {
+    description: "Secure your premises with professional CCTV installation and maintenance. High-quality camera setup, network configuration, and mobile viewing integration.",
     includes: [
       "Installation of dome and bullet cameras",
       "DVR / NVR setup and configuration",
@@ -84,6 +89,7 @@ export const servicesData: Record<string, {
     ]
   },
   "cleaning": {
+    description: "Transform your home with our deep cleaning services. Our trained professionals use industry-grade equipment to ensure a spotless, sanitized, and refreshing environment.",
     includes: [
       "Deep cleaning of all rooms",
       "Dusting of all surfaces and furniture",
@@ -105,6 +111,7 @@ export const servicesData: Record<string, {
     ]
   },
   "carpenter": {
+    description: "Skilled carpentry services for furniture repair, custom installations, and woodwork. Quality craftsmanship for doors, wardrobes, and all your wooden fixtures.",
     includes: [
       "Door lock and hinge replacement",
       "Furniture assembly (IKEA, etc.)",
@@ -125,6 +132,7 @@ export const servicesData: Record<string, {
     ]
   },
   "painter": {
+    description: "Refresh your walls with our premium painting services. From interior touch-ups to complete exterior makeovers, we deliver flawless finishes with top-quality materials.",
     includes: [
       "Interior wall painting",
       "Exterior building painting",
@@ -145,6 +153,7 @@ export const servicesData: Record<string, {
     ]
   },
   "computer-repair": {
+    description: "Reliable computer and laptop repair services. Whether it's a hardware upgrade, virus removal, or OS installation, our experts get your device running like new.",
     includes: [
       "Windows / OS installation",
       "Virus and malware removal",
