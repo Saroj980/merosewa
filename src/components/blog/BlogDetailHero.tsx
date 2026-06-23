@@ -106,7 +106,7 @@ export default function BlogDetailHero({ data }: { data: any }) {
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#0F172A] tracking-tight mb-12 max-w-4xl text-balance leading-[1.1]">
-              {words.map((word, i) => (
+              {words.map((word: string, i: number) => (
                 <motion.span
                   key={i}
                   initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
