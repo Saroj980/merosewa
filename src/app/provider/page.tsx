@@ -97,20 +97,20 @@ export default function BecomeProviderPage() {
                 Join the fastest-growing network of home service professionals in Sudurpashchim. Earn more, work on your own terms, and build your digital reputation.
               </p>
 
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 w-max mx-auto lg:mx-0">
-                <div className="flex flex-col items-center lg:items-start">
-                  <span className="text-3xl font-black text-[#0057D9]">500+</span>
-                  <span className="text-sm text-slate-500 font-bold">Active Partners</span>
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center lg:justify-start gap-4 sm:gap-8 bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-100 w-full sm:w-max mx-auto lg:mx-0">
+                <div className="flex flex-col items-center sm:items-center lg:items-start text-center sm:text-left">
+                  <span className="text-2xl sm:text-3xl font-black text-[#0057D9]">500+</span>
+                  <span className="text-xs sm:text-sm text-slate-500 font-bold">Active Partners</span>
                 </div>
                 <div className="w-px h-12 bg-slate-200 hidden sm:block"></div>
-                <div className="flex flex-col items-center lg:items-start">
-                  <span className="text-3xl font-black text-[#0057D9]">10K+</span>
-                  <span className="text-sm text-slate-500 font-bold">Monthly Jobs</span>
+                <div className="flex flex-col items-center sm:items-center lg:items-start text-center sm:text-left">
+                  <span className="text-2xl sm:text-3xl font-black text-[#0057D9]">10K+</span>
+                  <span className="text-xs sm:text-sm text-slate-500 font-bold">Monthly Jobs</span>
                 </div>
                 <div className="w-px h-12 bg-slate-200 hidden sm:block"></div>
-                <div className="flex flex-col items-center lg:items-start">
-                  <span className="text-3xl font-black text-[#22C55E]">Weekly</span>
-                  <span className="text-sm text-slate-500 font-bold">Guaranteed Payouts</span>
+                <div className="col-span-2 sm:col-span-1 flex flex-col items-center sm:items-center lg:items-start text-center sm:text-left pt-2 sm:pt-0 border-t border-slate-100 sm:border-t-0 mt-1 sm:mt-0">
+                  <span className="text-2xl sm:text-3xl font-black text-[#22C55E]">Weekly</span>
+                  <span className="text-xs sm:text-sm text-slate-500 font-bold">Guaranteed Payouts</span>
                 </div>
               </div>
             </motion.div>
@@ -122,7 +122,7 @@ export default function BecomeProviderPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="w-full max-w-md mx-auto"
             >
-              <div className="bg-white rounded-3xl p-8 shadow-2xl relative">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-2xl relative">
                 {isSubmitted ? (
                   <div className="text-center py-12">
                     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -250,7 +250,7 @@ export default function BecomeProviderPage() {
             <p className="text-lg text-slate-600 font-medium">Join the Mero Sewa partner network in 4 simple steps.</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8 relative">
+          <div className="grid md:grid-cols-4 gap-8 lg:gap-12 relative">
             {/* Connecting Line (Desktop only) */}
             <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-blue-100 -z-10"></div>
 

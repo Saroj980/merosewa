@@ -25,30 +25,30 @@ export function Hero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 mb-2 rounded-full bg-orange-50 border border-orange-200 text-orange-600 text-sm md:text-base font-bold tracking-wide shadow-sm"
+                className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 mb-2 rounded-full bg-orange-50 border border-orange-200 text-orange-600 text-xs sm:text-sm md:text-base font-bold tracking-wide shadow-sm"
               >
-                <span className="relative flex h-3 w-3">
+                <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-orange-500"></span>
                 </span>
                 🚀 LAUNCHING SOON IN SUDURPASHCHIM
               </motion.div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-slate-800 leading-[1.2] tracking-normal mt-2">
+              <h1 className="text-[2.2rem] leading-[1.15] sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-slate-800 tracking-normal mt-2">
                 नेपालको भरपर्दो <br />
-                <span className="text-[var(--primary-blue)] inline-block mt-2">होम सर्भिस प्लेटफर्म</span>
+                <span className="text-[var(--primary-blue)] inline-block mt-1 sm:mt-2">होम सर्भिस प्लेटफर्म</span>
               </h1>
               
-              <p className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed max-w-lg mt-6">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-lg mt-4 sm:mt-6">
                 Verified professionals for electrical, plumbing, AC repair, CCTV, cleaning and more - at your doorstep.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-2">
-              <Link href="/book" className="w-full sm:w-auto bg-[var(--primary-blue)] hover:bg-blue-700 text-white h-12 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-blue-500/30 flex items-center justify-center">
+              <Link href="/book" className="w-full sm:w-auto bg-[var(--primary-blue)] hover:bg-blue-700 text-white h-11 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-[13px] sm:text-base shadow-lg shadow-blue-500/30 flex items-center justify-center">
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" /> Book a Service
               </Link>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-sm sm:text-base border-slate-200 text-slate-800 hover:bg-slate-50 bg-white shadow-sm">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto h-11 sm:h-14 px-6 sm:px-8 rounded-xl font-bold text-[13px] sm:text-base border-slate-200 text-slate-800 hover:bg-slate-50 bg-white shadow-sm">
                 <UserCheck className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[var(--primary-green)]" /> Enroll as an Expert
               </Button>
             </div>
