@@ -10,10 +10,20 @@ export function LaunchPopup() {
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   useEffect(() => {
-    // Check if user has already seen or closed the popup in this session
-    const hasSeenPopup = sessionStorage.getItem("meroSewaLaunchPopupSeen");
+    // Check if user has seen the popup within the last 2 minutes
+    const lastSeenStr = localStorage.getItem("meroSewaLaunchPopupTimestamp");
+    let shouldShow = true;
+
+    if (lastSeenStr) {
+      const lastSeen = parseInt(lastSeenStr, 10);
+      const now = Date.now();
+      // 2 minutes = 2 * 60 * 1000 = 120,000 milliseconds
+      if (now - lastSeen < 120000) {
+        shouldShow = false;
+      }
+    }
     
-    if (!hasSeenPopup) {
+    if (shouldShow) {
       // Show popup after 1.5 seconds of page load
       const timer = setTimeout(() => {
         setIsOpen(true);
@@ -24,7 +34,7 @@ export function LaunchPopup() {
 
   const closePopup = () => {
     setIsOpen(false);
-    sessionStorage.setItem("meroSewaLaunchPopupSeen", "true");
+    localStorage.setItem("meroSewaLaunchPopupTimestamp", Date.now().toString());
   };
 
   const handleSubscribe = (e: React.FormEvent) => {

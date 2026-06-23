@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative pt-24 pb-16 md:pt-28 md:pb-20 bg-[#f8fafd] overflow-hidden">
+    <section className="relative pt-32 pb-16 md:pt-36 md:pb-20 bg-[#f8fafd] overflow-hidden">
       
       {/* Background Subtle Gradient */}
       <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-white/60 to-transparent pointer-events-none z-0"></div>
